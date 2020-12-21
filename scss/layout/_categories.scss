@@ -1,0 +1,26 @@
+.myCategories {
+  h2 {
+    @include text($color-black-0, $fs-3, $fw-bold);
+    margin-left: 60px;
+  }
+  .categories-item {
+    padding: $pd-2;
+    box-shadow: 0 0 1px 1px $color-gray-1, 0 3px 1px 0 $color-gray-1;
+    &:hover {
+      box-shadow: 0 0 3px 3px $color-black-dark, 0 3px 3px 0 $color-black-dark;
+    }
+    a {
+      display: flex;
+      color: $color-black-0;
+      text-decoration: none;
+      align-items: center;
+      i {
+        margin-right: $mg-1;
+        font-size: $fs-5 - 4;
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+.myNavBar {
+  .navbar-brand {
+    flex-grow: 1;
+    img {
+      width: 110px;
+    }
+  }
+  .categories {
+    flex-grow: 1;
+    @include text($color-black-light, $fs-1, $fw-normal);
+    align-self: center;
+  }
+  .input_search {
+    flex-grow: 5;
+    .form-control {
+      height: 45px;
+      background-color: $color-gray-1;
+      border: none;
+      transition: none;
+      &:focus {
+        box-shadow: none;
+        background-color: $color-white-0;
+        border-top: 1px solid $color-gray-3;
+        border-left: 1px solid $color-gray-3;
+        border-bottom: 1px solid $color-gray-3;
+      }
+      &:focus + .input-group-prepend {
+        .input-group-text {
+          color: $color-red-0;
+          background-color: $color-white-0;
+          border-top: 1px solid $color-gray-3;
+          border-right: 1px solid $color-gray-3;
+          border-bottom: 1px solid $color-gray-3;
+        }
+        &:hover {
+          .input-group-text {
+            color: $color-white-0;
+            background-color: $color-red-0;
+          }
+        }
+      }
+    }
+    .input-group-prepend {
+      .input-group-text {
+        background-color: $color-gray-1;
+        color: $color-red-0;
+        border: none;
+      }
+      &:hover {
+        .input-group-text {
+          color: $color-white-0;
+          background-color: $color-red-0;
+        }
+      }
+    }
+  }
+  .navbar-nav {
+    justify-content: space-between;
+    width: 100%;
+    .nav-item {
+      width: fit-content;
+      .nav-link {
+        @include text($color-black-light, $fs-1, $fw-normal);
+        padding: $pd-1 $pd-2;
+      }
+      &:hover {
+        background-color: $color-gray-1;
+      }
+    }
+    .instructor {
+      border-right: 1px solid #dedfe0;
+    }
+    .nav-item:nth-child(3) {
+      border-radius: 50%;
+    }
+  }
+}
+@include respond-to("extra-large") {
+  .myNavBar {
+    .navbar-nav {
+      .business,
+      .instructor {
+        display: none;
+      }
+    }
+  }
+}
+@include respond-to("medium") {
+  .myNavBar {
+    .navbar-brand {
+      img {
+        margin-left: 90%;
+        margin-top: -7px;
+      }
+    }
+    .categories,
+    .input_search {
+      display: none;
+    }
+    .navbar-toggler {
+      border: none;
+      margin-left: -170%;
+    }
+    .navbar-collapse {
+      margin-left: -170%;
+    }
+  }
+}
+@include respond-to("small") {
+  .myNavBar {
+    .navbar-brand {
+      img {
+        margin-left: 45%;
+        display: block;
+      }
+    }
+    .nav_right {
+      display: none;
+    }
+  }
+}

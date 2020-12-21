@@ -1,0 +1,41 @@
+.myIntro {
+  background: linear-gradient(-45deg, $color-red-0 0%, $color-purple 100%);
+
+  .intro_content {
+    width: 90%;
+    margin: auto;
+    padding: $pd-0;
+    .intro_item {
+      .icon {
+        @include text($color-white-0, 50px, $fw-bold);
+        margin-right: $mg-2;
+      }
+      .icon_content {
+        padding-top: 12px;
+        p:first-child {
+          @include text($color-white-0, $fs-0 + 2, $fw-bold);
+          margin-bottom: 0;
+        }
+        p:last-child {
+          @include text($color-white-0, $fs-0, $fw-normal);
+        }
+      }
+    }
+  }
+}
+@include respond-to("extra-large") {
+  .myIntro {
+    .intro_item {
+      .icon {
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+}
+@include respond-to("medium") {
+  .myIntro {
+    display: none;
+  }
+}
